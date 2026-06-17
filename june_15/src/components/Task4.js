@@ -48,3 +48,5 @@ function resetTimer() {
 
   document.getElementById("stopwatch").textContent = "00:00:00";
 }
+
+
