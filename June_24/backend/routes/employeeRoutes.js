@@ -1,0 +1,8 @@
+import express from "express";
+import { getDepartments } from "../controllers/employeeController.js";
+
+const router = express.Router();
+
+router.get("/departments", getDepartments);
+
+export default router;
