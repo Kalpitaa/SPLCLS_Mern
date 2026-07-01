@@ -1,47 +1,38 @@
-let tasks = [];
+const students = [
+  { id: 1, name: "Arun", mark: 85 },
+  { id: 2, name: "Karthik", mark: 45 },
+  { id: 3, name: "Vijay", mark: 92 },
+  { id: 4, name: "Ajay", mark: 35 }
+];
 
-function addTask() {
+document.getElementById("allStudents").innerHTML =
+  students.map(student =>
+    `<li>${student.name} - ${student.mark}</li>`
+  ).join("");
 
-    let taskInput = document.getElementById("taskInput");
-    let task = taskInput.value.trim();
+const passedStudents = students.filter(student => student.mark >= 50);
 
-    if (task === "") return;
+document.getElementById("passedStudents").innerHTML =
+  passedStudents.map(student =>
+    `<li>${student.name} - ${student.mark}</li>`
+  ).join("");
 
-    tasks.push(task);
-    taskInput.value = "";
+const student = students.find(s => s.id === 3);
 
-    displayTasks();
-}
+document.getElementById("foundStudent").innerHTML =
+  `${student.name} - ${student.mark}`;  
 
-function deleteTask(index) {
-    tasks.splice(index, 1);
-    displayTasks();
-}
 
-function displayTasks() {
+const totalMarks = students.reduce((sum, student) => {
+  return sum + student.mark;
+}, 0);
 
-    let list = document.getElementById("taskList");
-    let count = document.getElementById("count");
-    let message = document.getElementById("message");
+document.getElementById("totalMarks").innerText =
+  totalMarks;  
 
-    list.innerHTML = "";
+const averageMarks =
+  students.reduce((sum, student) => sum + student.mark, 0)
+  / students.length;
 
-    if (tasks.length === 0) {
-        message.style.display = "block";
-    } else {
-        message.style.display = "none";
-
-        tasks.forEach((task, index) => {
-            let li = document.createElement("li");
-
-            li.innerHTML = `
-                ${task}
-                <button onclick="deleteTask(${index})">Delete</button>
-            `;
-
-            list.appendChild(li);
-        });
-    }
-
-    count.innerText = tasks.length;
-}
+document.getElementById("averageMarks").innerText =
+  averageMarks;  

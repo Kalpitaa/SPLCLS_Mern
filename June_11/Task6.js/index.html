@@ -2,20 +2,23 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>User Search App</title>
+    <title>Order Management System</title>
 </head>
 <body>
 
-    <h1>User Search</h1>
+    <h1>Order Management System</h1>
 
-    <input 
-        type="text" 
-        id="searchBox" 
-        placeholder="Search user by name..."
-        onkeyup="filterUsers()"
-    />
+    <h2>All Orders</h2>
+    <ul id="allOrders"></ul>
 
-    <ul id="userList"></ul>
+    <h2>Completed Orders</h2>
+    <ul id="completedOrders"></ul>
+
+    <h2>Find Order (ID = 3)</h2>
+    <div id="findOrder"></div>
+
+    <h2>Total Revenue</h2>
+    <div id="totalRevenue"></div>
 
     <script src="script.js"></script>
 

@@ -2,20 +2,26 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Todo Task Counter</title>
+    <title>Student Management System</title>
 </head>
 <body>
 
-    <h1>Todo App</h1>
+    <h1>Student Management System</h1>
 
-    <input type="text" id="taskInput" placeholder="Enter task">
-    <button onclick="addTask()">Add Task</button>
+    <h2>All Students</h2>
+    <ul id="allStudents"></ul>
 
-    <h3>Total Tasks: <span id="count">0</span></h3>
+    <h2>Passed Students</h2>
+    <ul id="passedStudents"></ul>
 
-    <ul id="taskList"></ul>
+    <h2>Find Student (ID = 3)</h2>
+    <div id="foundStudent"></div>
 
-    <h3 id="message">No Tasks Available</h3>
+    <h2>Total Marks</h2>
+    <div id="totalMarks"></div>
+
+    <h2>Average Marks</h2>
+    <div id="averageMarks"></div>
 
     <script src="script.js"></script>
 
